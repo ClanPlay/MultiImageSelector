@@ -472,7 +472,7 @@ public class MultiImageSelectorFragment extends Fragment {
                                 if (count % 100 == 0) {
                                     publishProgress(count);
                                 }
-                            } while (data.moveToNext());
+                            } while (!data.isClosed() && data.moveToNext());
                             return images;
                         }
 
